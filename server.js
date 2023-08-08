@@ -5,6 +5,7 @@ const cors = require('cors');
 const indexRoute = require('./routes/index');
 const pingRoute = require('./routes/ping');
 const httpRoute = require('./routes/hw-http');
+const hooksRoute = require('./routes/hw-hooks');
 const http = require('http');
 
 
@@ -21,6 +22,7 @@ app.use('/', indexRoute);
 app.use('/ping', pingRoute);
 app.use(express.static(__dirname + '/public/'));
 app.use('/hw-http/notes', httpRoute);
+app.use('/hw-hooks', hooksRoute);
 
 async function start (PORT) {
   try {
